@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<title>RadViz Plot</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src='https://d3js.org/d3.v4.min.js'></script>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<style>
+	div.tooltip {
+		position: absolute;
+		text-align: center;
+		width: 60px;
+		height: 28px;
+		padding: 2px;
+		font: 12px Helvetica;
+		background: darkblue;
+		border: 0px;
+		border-radius: 10px;
+		pointer-events: none;
+	}
+
+	.myDiv {
+		float: right;
+		margin-right: 13em;
+		margin-top: 3em;
+	}
+
+	
+	.form {
+		max-width: 300px;
+	}
+</style>
+
+<body>
+
+
+	<div class="container justify-content-center align-items-center" id="radviz">
+		<div style="font-size: 35px;font-family:intial;font-weight:bolder;margin-bottom: 2em; text-align: center">RadViz Visualization</div>.
+		<div class="form">
+			<div class="form-group">
+				<label>DataSet</label>
+				<select id="dataset" onchange="getDataset()">
+					<option value="iris">iris.csv</option>
+					<option value="wine">winequality-red.csv</option>
+				</select>
+			<div class="form-group">
+				<label> Clustering</label>
+				<select id="toggle" onchange="toggleClass()">
+					<option value="class">class</option>
+					<option value="cluster">cluster</option>
+				</select>
+			</div>
+			</div>
+			
+			<div class="form-group">
+				<label>Parameters</label>
+				<input type="number" name="parameters" id="parameters" min="0" max="8" class="form-control"/>
+				<button onclick="getParameter();">Submit</button>
+			
+			</div>
+			<div class="form-group">
+				<span class="leftlabel">0</span>
+				<input id="range2" type="range" min="0" max="100" value="100" style="width: 200px; margin-right: 10px;" />
+				<span class="rightlabel">100</span>
+				<div style="font-size: 25px;font-family: initial">Opacity</div>
+			</div>
+		</div>
+		<div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+		<div class='myDiv'>
+			
+
+	</div>
+	<script src='static/radviz.js'></script>
+</body>
