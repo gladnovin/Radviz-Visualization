@@ -1,6 +1,5 @@
 	   
-                       Radviz Visualisation Assignment 4
-Steps :
+                       Radviz Visualisation
 
 1.The datasets iris and winequality is available in a dropdown box.You need to switch 
 between the two datasets
